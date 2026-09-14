@@ -964,9 +964,9 @@
                             </div>
 
                             <div class="sm:col-span-2">
-                                <button type="submit"
-                                    class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2">
-                                    <span>Enviar mensagem</span>
+                                <button type="submit" id="submit-btn"
+                                    class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+                                    <span id="btn-text">Enviar mensagem</span>
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -1038,7 +1038,7 @@
                 });
             }
 
-            // Validação do formulário de contato
+            // Validação + Envio AJAX do formulário de contato (Fetch API)
             const form = document.getElementById('contact-form');
             if (form) {
                 const nome = document.getElementById('nome');
@@ -1046,6 +1046,8 @@
                 const descricao = document.getElementById('descricao');
                 const count = document.getElementById('descricao-count');
                 const feedback = document.getElementById('form-feedback');
+                const submitBtn = document.getElementById('submit-btn');
+                const btnText = document.getElementById('btn-text');
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
                 const showError = (input, errorId, message) => {
@@ -1081,7 +1083,17 @@
                     if (emailPattern.test(email.value.trim())) showError(email, 'email-error', '');
                 });
 
-                form.addEventListener('submit', function (e) {
+                const showFeedback = (message, type) => {
+                    feedback.textContent = message;
+                    if (type === 'success') {
+                        feedback.className = 'mt-4 text-center text-sm font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 p-3 rounded-xl';
+                    } else {
+                        feedback.className = 'mt-4 text-center text-sm font-medium text-rose-400 bg-rose-500/10 border border-rose-500/30 p-3 rounded-xl';
+                    }
+                };
+
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault();
                     let valid = true;
                     const nomeVal = nome.value.trim();
                     const emailVal = email.value.trim();
@@ -1119,14 +1131,48 @@
 
                     feedback.classList.add('hidden');
                     if (!valid) {
-                        e.preventDefault();
                         const firstInvalid = form.querySelector('[aria-invalid="true"]');
                         if (firstInvalid) firstInvalid.focus();
-                        feedback.textContent = 'Verifique os campos destacados antes de enviar.';
-                        feedback.classList.remove('hidden');
-                        feedback.classList.add('text-rose-400');
-                        feedback.classList.remove('text-emerald-400');
+                        showFeedback('Verifique os campos destacados antes de enviar.', 'error');
                         return;
+                    }
+
+                    // Estado de envio
+                    const originalBtnText = btnText ? btnText.textContent : '';
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        if (btnText) btnText.textContent = 'Enviando...';
+                    }
+
+                    try {
+                        const formData = new FormData(form);
+                        const response = await fetch(form.action, {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            form.reset();
+                            updateCount();
+                            showFeedback('✓ Mensagem enviada com sucesso! Responderei em breve.', 'success');
+                        } else {
+                            let errorMsg = 'Ocorreu um erro ao enviar a mensagem. Tente novamente.';
+                            try {
+                                const data = await response.json();
+                                if (data && data.message) errorMsg = data.message;
+                            } catch (_) { /* ignora parse */ }
+                            showFeedback(errorMsg, 'error');
+                        }
+                    } catch (err) {
+                        showFeedback('Erro de conexão. Verifique sua internet e tente novamente.', 'error');
+                    } finally {
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            if (btnText) btnText.textContent = originalBtnText || 'Enviar mensagem';
+                        }
                     }
                 });
             }
