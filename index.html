@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags Principais -->
+    <title>Silvio Dias | Engenheiro de Software .NET & React | Landing Pages</title>
+    <meta name="description"
+        content="Engenheiro de Software Backend especialista em sistemas corporativos .NET, React e criação de Landing Pages de alta conversão. Conheça meus serviços e o app PRF ADM.">
+    <meta name="keywords"
+        content="Silvio Dias, Engenheiro de Software, .NET, C#, React, Landing Pages, Desenvolvimento de Sistemas, Campo Grande MS, PRF ADM">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Silvio Dias | Engenharia de Software & Landing Pages">
+    <meta property="og:description"
+        content="Soluções robustas em arquitetura de sistemas e páginas web focadas em alta performance e conversão.">
+    <meta property="og:url" content="https://sdiascode.com.br">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#070a12',
+                            900: '#0b132b',
+                            800: '#111d42',
+                            700: '#1c2d5a',
+                            600: '#253e78',
+                        },
+                        accent: {
+                            cyan: '#38bdf8',
+                            blue: '#3b82f6',
+                            glow: '#60a5fa',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body class="antialiased text-slate-300 selection:bg-sky-500 selection:text-white relative">
+
+    <div class="bg-glow-blob"></div>
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-800/60 bg-navy-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" class="group flex items-center gap-2">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-sky-400 p-[1px] flex items-center justify-center shadow-lg shadow-sky-500/10">
+                    <div
+                        class="w-full h-full bg-slate-950 rounded-[11px] flex items-center justify-center font-bold text-sky-400 text-lg group-hover:bg-transparent group-hover:text-white transition-all">
+                        sd
+                    </div>
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-white">sdias<span
+                        class="text-sky-400">code</span></span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#sobre" class="text-slate-300 hover:text-sky-400 transition-colors">Sobre Mim</a>
+                <a href="#servicos" class="text-slate-300 hover:text-sky-400 transition-colors">Serviços</a>
+                <a href="#casos-sucesso" class="text-slate-300 hover:text-sky-400 transition-colors">Casos de
+                    Sucesso</a>
+                <a href="#produtos" class="text-slate-300 hover:text-sky-400 transition-colors">Produtos</a>
+                <a href="#contato" class="text-slate-300 hover:text-sky-400 transition-colors">Contato</a>
+            </nav>
+
+            <!-- CTA Button Header -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/5567999999999?text=Olá%20Silvio,%20gostaria%20de%20solicitar%20um%20orçamento!"
+                    target="_blank" rel="noopener"
+                    class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-md shadow-sky-500/20 hover:shadow-sky-500/30 transition-all flex items-center gap-2">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                    </svg>
+                    <span>Falar no WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" aria-label="Abrir Menu"
+                class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-navy-950 px-4 pt-4 pb-6 space-y-3">
+            <a href="#sobre" class="block text-slate-300 hover:text-sky-400 py-2 text-base font-medium">Sobre Mim</a>
+            <a href="#servicos" class="block text-slate-300 hover:text-sky-400 py-2 text-base font-medium">Serviços</a>
+            <a href="#casos-sucesso" class="block text-slate-300 hover:text-sky-400 py-2 text-base font-medium">Casos de
+                Sucesso</a>
+            <a href="#produtos" class="block text-slate-300 hover:text-sky-400 py-2 text-base font-medium">Produtos</a>
+            <a href="#contato" class="block text-slate-300 hover:text-sky-400 py-2 text-base font-medium">Contato</a>
+            <a href="https://wa.me/5567993298231?text=Olá%20Silvio,%20gostaria%20de%20solicitar%20um%20orçamento!"
+                target="_blank" rel="noopener"
+                class="w-full text-center mt-2 px-5 py-3 rounded-xl bg-sky-500 text-white font-semibold flex items-center justify-center gap-2">
+                Falar no WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20 lg:pt-24 space-y-10 lg:space-y-14">
+
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Availability Badge -->
+            <div
+                class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs sm:text-sm font-semibold tracking-wider mb-8">
+                <span class="relative flex h-2.5 w-2.5 shrink-0">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
+                </span>
+                <span>Engenharia de Software • .NET • React • Minimal APIs</span>
+            </div>
+
+            <!-- Banner Tecnológico Responsivo (atrás do título + parágrafo) -->
+            <div
+                class="relative overflow-hidden rounded-3xl border border-sky-500/20 bg-slate-900/60 px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20 shadow-2xl shadow-sky-950/40">
+
+                <!-- Grade tecnológica de fundo -->
+                <div
+                    class="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.08)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_40%,black,transparent)] pointer-events-none">
+                </div>
+
+                <!-- Brilhos decorativos -->
+                <div
+                    class="absolute -top-28 left-1/2 -translate-x-1/2 w-3/4 h-56 bg-sky-500/20 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-32 -left-20 w-72 h-72 bg-blue-600/15 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-32 -right-20 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <!-- Conteúdo do banner -->
+                <div class="relative z-10">
+                    <!-- Main Heading -->
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-tight">
+                        Sistemas Corporativos Estáveis e <span class="text-gradient">Landing Pages de Alta
+                            Conversão</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p
+                        class="mt-6 text-base sm:text-lg lg:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+                        Desenvolvimento de ecossistemas backend escaláveis, sustentação de ambientes legados e criação de
+                        plataformas web ultrarrápidas preparadas para vender.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#contato"
+                    class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-base shadow-lg shadow-sky-500/25 transition-all hover:scale-[1.02]">
+                    Solicitar Orçamento
+                </a>
+                <a href="#produtos"
+                    class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel hover:bg-slate-800/80 text-slate-200 font-semibold text-base transition-all hover:border-sky-500/40">
+                    Conhecer App PRF ADM
+                </a>
+            </div>
+
+            <!-- Key Metric Quick Grid -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="p-4 rounded-2xl glass-panel">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-sky-400">+20 Anos</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Experiência em TI & Redes</div>
+                </div>
+                <div class="p-4 rounded-2xl glass-panel">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-sky-400">+4 Anos</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Sistemas do Governo (SAD/MS)</div>
+                </div>
+                <div class="p-4 rounded-2xl glass-panel">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-sky-400">1º Lugar</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium mt-1">SEO Orgânico no Google</div>
+                </div>
+                <div class="p-4 rounded-2xl glass-panel">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-sky-400">100%</div>
+                    <div class="text-xs sm:text-sm text-slate-400 font-medium mt-1">Sistemas de Alta Criticidade</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Seção: SOBRE MIM -->
+        <section id="sobre" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+            <div
+                class="p-8 sm:p-12 rounded-3xl bg-slate-900/80 backdrop-blur-xl border border-sky-500/20 shadow-2xl shadow-sky-950/50 relative overflow-hidden">
+
+                <!-- Detalhe sutil de iluminação de fundo (Glow Effect) -->
+                <div
+                    class="absolute -top-24 -right-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10">
+
+                <!-- Coluna de Texto Principal -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
+                        </span>
+                        Trajetória & Filosofia
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                        Sobre Mim
+                    </h2>
+
+                    <div class="space-y-4 text-slate-300 text-base leading-relaxed">
+                        <p>
+                            Olá, eu sou <strong class="text-white font-semibold">Silvio Dias Ferreira</strong>,
+                            Engenheiro de Software Backend especializado em ecossistemas de alta criticidade e soluções
+                            digitais modernas.
+                        </p>
+                        <p>
+                            Minha caminhada na tecnologia reúne <strong class="text-sky-300 font-semibold">mais de 20
+                                anos de bagagem em infraestrutura, redes e suporte avançado de TI</strong>, incluindo
+                            uma sólida experiência gerenciando servidores e políticas rigorosas de segurança digital.
+                        </p>
+                        <p>
+                            Com formação em <strong class="text-slate-100">Análise e Desenvolvimento de
+                                Sistemas</strong>, atuei por mais de 4 anos diretamente no desenvolvimento, sustentação
+                            e modernização de sistemas corporativos de missão crítica para o <strong
+                                class="text-sky-300 font-semibold">Governo do Estado de Mato Grosso do Sul
+                                (SAD)</strong>.
+                        </p>
+                        <p>
+                            Fui responsável por decompor regras de negócio complexas em arquiteturas legadas para
+                            microsserviços modernos, APIs RESTful eficientes e interfaces reativas de alto desempenho.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Coluna Tech Stack & Cards -->
+                <div class="lg:col-span-5">
+                    <div class="p-6 sm:p-8 rounded-3xl glass-panel space-y-6">
+                        <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                Tech Stack Principal
+                            </h3>
+                            <span
+                                class="text-xs text-sky-400 font-mono bg-sky-500/10 px-2.5 py-1 rounded-full border border-sky-500/20">Backend
+                                & Front</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2.5">
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">.NET
+                                8 / .NET 9</span>
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">C#</span>
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">React</span>
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">ASP.NET
+                                Web API</span>
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">Clean
+                                Architecture</span>
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">SQL
+                                Server / Oracle</span>
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">Docker
+                                & Containerization</span>
+                            <span
+                                class="px-3.5 py-2 rounded-xl bg-slate-900/90 text-sky-300 border border-slate-700/80 text-sm font-medium hover:border-sky-400 transition-colors">Java
+                                / Spring Boot</span>
+                        </div>
+
+                        <!-- Card de Destaque Adicional -->
+                        <div class="p-4 rounded-2xl bg-sky-950/40 border border-sky-500/20 flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-sky-500/10 text-sky-400 shrink-0">
+                                🛡️
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-300 leading-snug">
+                                Foco inegociável em <strong class="text-white">código limpo, padrões SOLID, segurança de
+                                    dados</strong> e máxima estabilidade operacional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Seção: SERVIÇOS -->
+        <section id="servicos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div
+                    class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
+                    </span>
+                    Especialidades & Soluções
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
+                    O Que Posso Desenvolver Para Seu Negócio
+                </h2>
+                <p class="text-slate-400 text-base mt-3">
+                    Da arquitetura do banco de dados ao front-end de alta performance e páginas para captar clientes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <!-- Card 1: .NET -->
+                <article class="p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between group">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                            🛠️
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors">
+                            Engenharia & Manutenção .NET
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Criação, evolução e refatoração de ecossistemas robustos utilizando C# e .NET 8/9. Aplicação
+                            rigorosa de Clean Architecture, Minimal APIs, processamentos assíncronos e otimização de
+                            consultas em SQL Server e Oracle.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-8 pt-4 border-t border-slate-800/80 flex flex-col items-start gap-1.5 text-xs font-semibold text-sky-400">
+                        <span>Alta Escalabilidade</span>
+                        <span>APIs Performáticas</span>
+                    </div>
+                </article>
+
+                <!-- Card 2: React -->
+                <article class="p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between group">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                            🌐
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors">
+                            Front-End Moderno com React
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Desacoplamento de sistemas monolíticos legados para interfaces reativas, elegantes, rápidas
+                            e amigáveis ao usuário. Integração fluida com APIs RESTful e componentes reutilizáveis.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-8 pt-4 border-t border-slate-800/80 flex flex-col items-start gap-1.5 text-xs font-semibold text-sky-400">
+                        <span>SPAs Reativas</span>
+                        <span>UX Confortável</span>
+                    </div>
+                </article>
+
+                <!-- Card 3: Landing Pages -->
+                <article class="p-8 rounded-3xl glass-panel glass-panel-hover flex flex-col justify-between group">
+                    <div>
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                            📈
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-sky-300 transition-colors">
+                            Landing Pages de Alta Conversão
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Páginas de vendas otimizadas, ultrarrápidas no carregamento e estruturadas segundo os
+                            critérios mais rígidos de SEO do Google. Pensadas para gerar leads e converter visitantes em
+                            clientes.
+                        </p>
+                    </div>
+                    <div
+                        class="mt-8 pt-4 border-t border-slate-800/80 flex flex-col items-start gap-1.5 text-xs font-semibold text-sky-400">
+                        <span>SEO Nativo</span>
+                        <span>Carregamento Instantâneo</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- Seção: CASOS DE SUCESSO (Kayzen Terapias Case) -->
+        <section id="casos-sucesso" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 scroll-mt-28">
+            <div
+                class="p-8 sm:p-12 rounded-3xl bg-slate-900/80 backdrop-blur-xl border border-sky-500/20 shadow-2xl shadow-sky-950/50 relative overflow-hidden">
+
+                <!-- Subtle Background Accent -->
+                <div
+                    class="absolute -right-20 -bottom-20 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <div class="relative z-10 space-y-8">
+                    <!-- Eyebrow + Header -->
+                    <div>
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-bold uppercase tracking-wide mb-3">
+                            🏆 Estudo de Caso • Engenharia Web & SEO
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.2]">
+                            <span class="block">Kayzen Terapias:</span>
+                            <span class="block">Do Código Limpo ao</span>
+                            <span
+                                class="block text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 pb-2">1º
+                                Lugar do Google em 90 Dias</span>
+                        </h2>
+                        <p class="text-slate-400 text-base sm:text-lg mt-4 max-w-3xl leading-relaxed">
+                            Como a escolha da arquitetura web correta superou concorrentes antigos e dominou as buscas
+                            orgânicas
+                            de forma definitiva.
+                        </p>
+                    </div>
+
+                    <!-- Layout em coluna única: texto + métricas em cima, imagens abaixo -->
+                    <div class="flex flex-col gap-8">
+
+                        <!-- Bloco Superior: Texto + Métricas -->
+                        <div class="space-y-6 min-w-0">
+
+                            <!-- Bloco de Texto com Borda Lateral Guia -->
+                            <div
+                                class="space-y-4 text-slate-300 text-base leading-relaxed border-l-2 border-sky-500/40 pl-4 sm:pl-6">
+                                <p>
+                                    A maioria das agências tradicionais entrega sites genéricos, pesados e lentos. O
+                                    resultado
+                                    comercial é uma página invisível que exige investimentos contínuos em anúncios pagos
+                                    para
+                                    conseguir visualizações.
+                                </p>
+                                <p>
+                                    Ao assumir o projeto da plataforma <strong class="text-white font-semibold">Kayzen
+                                        Terapias</strong>, apliquei engenharia de software baseada estritamente nas
+                                    diretrizes
+                                    oficiais do Google Lighthouse. O resultado foi cirúrgico: <strong
+                                        class="text-sky-300 font-semibold">em apenas 3 meses (90 dias) após o
+                                        lançamento, o site
+                                        alcançou o 1º lugar absoluto no ranking orgânico do Google</strong>, superando
+                                    redes
+                                    sociais e concorrentes da região.
+                                </p>
+                                <a href="https://kayzencursos.com.br/" target="_blank" rel="noopener"
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 hover:text-sky-300 transition-colors">
+                                    <span>Visitar o site da Kayzen Terapias</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <!-- Métricas Integradas -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                                <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 text-center">
+                                    <div class="text-2xl sm:text-3xl font-black text-sky-400">100/100</div>
+                                    <div class="text-xs font-medium text-slate-400 mt-1">Performance Google</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 text-center">
+                                    <div class="text-2xl sm:text-3xl font-black text-cyan-400">90 Dias</div>
+                                    <div class="text-xs font-medium text-slate-400 mt-1">Para o Topo Orgânico</div>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 text-center">
+                                    <div class="text-2xl sm:text-3xl font-black text-blue-400">Zero</div>
+                                    <div class="text-xs font-medium text-slate-400 mt-1">Anúncios Obrigatórios</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Bloco Inferior: Cards de Imagens lado a lado abaixo das métricas -->
+                        <div class="grid sm:grid-cols-2 gap-4 min-w-0">
+                            <!-- Card 1 -->
+                            <div
+                                class="p-3 rounded-2xl bg-slate-800/60 border border-slate-700/60 group hover:border-sky-500/40 transition-all shadow-lg">
+                                <div
+                                    class="aspect-video bg-slate-950 rounded-xl overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                    <img src="img/auditoria.jpg" alt="Auditoria SEOmator Kayzen Terapias"
+                                        onerror="this.onerror=null; this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
+                                        class="w-full h-full object-cover">
+                                    <!-- Fallback Placeholder -->
+                                    <div class="hidden flex flex-col items-center justify-center text-center p-4">
+                                        <svg class="w-10 h-10 text-sky-400 mb-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        <span class="text-xs font-bold text-slate-200">Auditoria SEOmator — Nota
+                                            Máxima</span>
+                                        <span class="text-[10px] text-slate-400 mt-1">Carregamento instantâneo & Código
+                                            Limpo</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2.5 px-1 text-center font-medium">Auditoria Técnica:
+                                    Nota
+                                    máxima em performance e boas práticas do Google.</p>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div
+                                class="p-3 rounded-2xl bg-slate-800/60 border border-slate-700/60 group hover:border-sky-500/40 transition-all shadow-lg">
+                                <div
+                                    class="aspect-video bg-slate-950 rounded-xl overflow-hidden relative flex items-center justify-center border border-slate-800">
+                                    <img src="img/rank.jpg" alt="Ranking Google Kayzen Terapias"
+                                        onerror="this.onerror=null; this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"
+                                        class="w-full h-full object-cover">
+                                    <!-- Fallback Placeholder -->
+                                    <div class="hidden flex flex-col items-center justify-center text-center p-4">
+                                        <svg class="w-10 h-10 text-cyan-400 mb-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                        </svg>
+                                        <span class="text-xs font-bold text-slate-200">1º Lugar no Google em 90
+                                            Dias</span>
+                                        <span class="text-[10px] text-slate-400 mt-1">Posicionamento Orgânico sem custo
+                                            mensal</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-2.5 px-1 text-center font-medium">Resultado Real: 1º
+                                    lugar
+                                    absoluto no ranking orgânico de buscas.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Seção: PRODUTOS (App PRF ADM) -->
+        <section id="produtos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-28">
+            <div
+                class="relative overflow-hidden p-8 sm:p-12 lg:p-14 rounded-3xl bg-slate-900/80 backdrop-blur-xl border border-sky-500/20 shadow-2xl shadow-sky-950/50 grid lg:grid-cols-12 gap-8 items-stretch">
+
+                <!-- Detalhe sutil de iluminação de fundo (Glow Effect) -->
+                <div
+                    class="absolute -top-24 -left-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <!-- Cabeçalho: Badge + Título (largura total; o card da direita começa abaixo do H2) -->
+                <div class="lg:col-span-12 relative z-10 space-y-6 max-w-3xl">
+
+                    <!-- Badge Status com Animação de Pulso -->
+                    <div
+                        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
+                        </span>
+                        Produto Próprio em Produção
+                    </div>
+
+                    <!-- Título Principal Redimensionado e com Gradiente Azul -->
+                    <div>
+                        <h2
+                            class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none mb-3">
+                            PRF ADM <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 md:block">Quiz
+                                & Simulados</span>
+                        </h2>
+                        <p class="text-sky-200/70 text-sm font-medium tracking-wide uppercase">
+                            Preparação Mobile de Alta Performance para Concursos
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Coluna Esquerda: Descrição + Recursos (grid absorve a altura e alinha a base ao card) -->
+                <div class="lg:col-span-7 relative z-10 min-w-0 flex flex-col gap-6">
+
+                    <!-- Descrição -->
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                        Aplicativo Android nativo projetado para otimizar o tempo de estudo. Desenvolvido com
+                        ecossistema
+                        <strong class="text-white">Flutter</strong> e banco de dados embutido (<strong
+                            class="text-white">SQLite</strong>), funcionando com total autonomia offline.
+                    </p>
+
+                    <!-- Grid de Recursos/Highlights -->
+                    <div class="grid sm:grid-cols-2 gap-3 pt-2 flex-1 auto-rows-fr">
+                        <div
+                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 text-slate-200 text-sm">
+                            <div
+                                class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-xs shrink-0">
+                                ✓</div>
+                            <span>Banco de questões modular</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 text-slate-200 text-sm">
+                            <div
+                                class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-xs shrink-0">
+                                ✓</div>
+                            <span>Simulados cronometrados</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 text-slate-200 text-sm">
+                            <div
+                                class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-xs shrink-0">
+                                ✓</div>
+                            <span>Funcionamento 100% Offline</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 text-slate-200 text-sm">
+                            <div
+                                class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-xs shrink-0">
+                                ✓</div>
+                            <span>Zero distrações e anúncios</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Card de Chamada para Ação (CTA) -->
+                <div class="lg:col-span-5 relative z-10 flex flex-col min-w-0">
+                    <div
+                        class="flex-1 flex flex-col items-center justify-center text-center p-8 bg-gradient-to-b from-slate-800/80 to-slate-900/90 rounded-2xl border border-sky-500/30 shadow-xl relative overflow-hidden group">
+
+                        <!-- Ícone do App em Imagem JPEG -->
+                        <img src="img/app.jpg" alt="Ícone App PRF ADM"
+                            class="w-20 h-20 rounded-2xl object-contain p-1 bg-slate-900/90 border border-sky-500/20 mb-5 shadow-lg shadow-sky-500/30 group-hover:scale-105 transition-transform duration-300">
+
+                        <h3 class="text-xl font-bold text-white mb-1">App PRF ADM</h3>
+                        <p class="text-xs text-slate-400 mb-6 max-w-xs">
+                            Disponível para smartphones Android. Baixe ou acesse a demonstração.
+                        </p>
+
+                        <!-- Botão Principal alinhado com o gradiente do título (Quiz & Simulados) -->
+                        <a href="https://concurso.sdiascode.com.br" target="_blank" rel="noopener"
+                            class="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Acessar Landing Page do App</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Seção: CONTATO (CTA Final) -->
+        <section id="contato" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center scroll-mt-28">
+            <div
+                class="p-10 sm:p-16 rounded-3xl bg-gradient-to-b from-navy-900 to-slate-950 border border-sky-500/30 relative overflow-hidden shadow-2xl">
+
+                <div
+                    class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-3">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
+                    </span>
+                    Vamos Conversar
+                </div>
+
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+                    Pronto Para Impulsionar Seu Projeto?
+                </h2>
+
+                <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
+                    Precisa de sustentação em sistemas legados .NET, criação de APIs de alta performance ou uma Landing
+                    Page vendedora? Entre em contato e respondo em poucas horas.
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://wa.me/5567993298231?text=Olá%20Silvio,%20gostaria%20de%20conversar%20sobre%20um%20projeto!"
+                        target="_blank" rel="noopener"
+                        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-3">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        <span>Iniciar Conversa no WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Separador -->
+                <div class="mt-10 flex items-center gap-4" aria-hidden="true">
+                    <span class="h-px flex-1 bg-slate-800"></span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">ou envie por
+                        e-mail</span>
+                    <span class="h-px flex-1 bg-slate-800"></span>
+                </div>
+
+                <!-- Formulário de contato -->
+                <div class="mt-8 text-left">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white text-center">Envie sua mensagem</h3>
+                    <p class="text-sm text-slate-400 text-center mt-2 mb-6">Respondo em poucas horas. Todos os campos
+                        são obrigatórios.</p>
+
+                    <form id="contact-form" action="https://formsubmit.co/assistenciapc.ms@gmail.com" method="POST"
+                        aria-label="Formulário de contato" novalidate class="max-w-2xl mx-auto">
+                        <fieldset class="grid sm:grid-cols-2 gap-5">
+                            <legend class="sr-only">Dados para contato</legend>
+
+                            <input type="hidden" name="_subject" value="Novo contato via site sdiascode.com.br">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off"
+                                aria-hidden="true">
+
+                            <div>
+                                <label for="nome" class="block text-sm font-semibold text-slate-200 mb-2">Nome</label>
+                                <input id="nome" name="nome" type="text" required autocomplete="name" minlength="2"
+                                    maxlength="100" placeholder="Seu nome completo" aria-required="true"
+                                    aria-describedby="nome-error"
+                                    class="w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-100 placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition">
+                                <p id="nome-error" class="hidden mt-1.5 text-xs text-rose-400" role="alert"></p>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-slate-200 mb-2">E-mail</label>
+                                <input id="email" name="email" type="email" required autocomplete="email"
+                                    inputmode="email" maxlength="254" placeholder="seu@email.com" aria-required="true"
+                                    aria-describedby="email-error"
+                                    class="w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-100 placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition">
+                                <p id="email-error" class="hidden mt-1.5 text-xs text-rose-400" role="alert"></p>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="descricao"
+                                    class="block text-sm font-semibold text-slate-200 mb-2">Descrição</label>
+                                <textarea id="descricao" name="descricao" rows="5" required minlength="20"
+                                    maxlength="1000"
+                                    placeholder="Digite nesta area qual a sua necessidade e como podemos atende-lo."
+                                    aria-required="true" aria-describedby="descricao-help descricao-count descricao-error"
+                                    class="w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-100 placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition resize-y min-h-[128px]"></textarea>
+                                <div class="mt-1.5 flex items-center justify-between gap-4">
+                                    <p id="descricao-help" class="text-xs text-slate-500">Mínimo 20 e máximo 1000
+                                        caracteres.</p>
+                                    <p id="descricao-count" class="text-xs text-slate-500 tabular-nums"
+                                        aria-live="polite">0 / 1000</p>
+                                </div>
+                                <p id="descricao-error" class="hidden mt-1.5 text-xs text-rose-400" role="alert"></p>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <button type="submit"
+                                    class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2">
+                                    <span>Enviar mensagem</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                            d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                                    </svg>
+                                </button>
+                                <p id="form-feedback" class="hidden mt-4 text-center text-sm font-medium"
+                                    role="status" aria-live="polite"></p>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="mt-6 text-xs text-slate-400">
+                    Atendimento em Campo Grande / MS e projetos remotos para todo o Brasil
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="mt-10 lg:mt-14 border-t border-slate-800/80 bg-navy-950 py-12">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <div class="flex items-center gap-3">
+                <span class="text-lg font-bold text-white">sdias<span class="text-sky-400">code</span></span>
+                <span class="text-slate-600">|</span>
+                <span class="text-xs text-slate-400">Silvio Dias Ferreira</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-sm font-medium text-slate-400">
+                <a href="https://github.com/sdias-code" target="_blank" rel="noopener"
+                    class="hover:text-sky-400 transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/sdias2026/" target="_blank" rel="noopener"
+                    class="hover:text-sky-400 transition-colors">LinkedIn</a>
+                <a href="https://www.instagram.com/sdiascode.dev/" target="_blank" rel="noopener"
+                    class="hover:text-sky-400 transition-colors">Instagram</a>
+                <a href="https://concurso.sdiascode.com.br/" target="_blank" rel="noopener"
+                    class="hover:text-sky-400 transition-colors">App PRF ADM</a>
+            </div>
+
+            <p class="text-xs text-slate-400 text-center md:text-right">
+                &copy; 2026 sdiascode. Todos os direitos reservados.
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Interactions + Contact Form Validation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Fechar menu mobile ao clicar em um link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Validação do formulário de contato
+            const form = document.getElementById('contact-form');
+            if (form) {
+                const nome = document.getElementById('nome');
+                const email = document.getElementById('email');
+                const descricao = document.getElementById('descricao');
+                const count = document.getElementById('descricao-count');
+                const feedback = document.getElementById('form-feedback');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+                const showError = (input, errorId, message) => {
+                    const el = document.getElementById(errorId);
+                    if (message) {
+                        el.textContent = message;
+                        el.classList.remove('hidden');
+                        input.classList.add('border-rose-500');
+                        input.classList.remove('border-slate-700/60');
+                        input.setAttribute('aria-invalid', 'true');
+                    } else {
+                        el.textContent = '';
+                        el.classList.add('hidden');
+                        input.classList.remove('border-rose-500');
+                        input.classList.add('border-slate-700/60');
+                        input.removeAttribute('aria-invalid');
+                    }
+                };
+
+                const updateCount = () => {
+                    count.textContent = descricao.value.length + ' / 1000';
+                };
+                descricao.addEventListener('input', () => {
+                    updateCount();
+                    if (descricao.value.trim().length >= 20) showError(descricao, 'descricao-error', '');
+                });
+                updateCount();
+
+                nome.addEventListener('input', () => {
+                    if (nome.value.trim().length >= 2) showError(nome, 'nome-error', '');
+                });
+                email.addEventListener('input', () => {
+                    if (emailPattern.test(email.value.trim())) showError(email, 'email-error', '');
+                });
+
+                form.addEventListener('submit', function (e) {
+                    let valid = true;
+                    const nomeVal = nome.value.trim();
+                    const emailVal = email.value.trim();
+                    const descVal = descricao.value.trim();
+
+                    if (nomeVal.length < 2) {
+                        showError(nome, 'nome-error', 'Informe seu nome (mínimo 2 caracteres).');
+                        valid = false;
+                    } else {
+                        showError(nome, 'nome-error', '');
+                    }
+
+                    if (!emailVal) {
+                        showError(email, 'email-error', 'Informe seu e-mail.');
+                        valid = false;
+                    } else if (!emailPattern.test(emailVal)) {
+                        showError(email, 'email-error', 'Informe um e-mail válido (ex.: seu@email.com).');
+                        valid = false;
+                    } else {
+                        showError(email, 'email-error', '');
+                    }
+
+                    if (!descVal) {
+                        showError(descricao, 'descricao-error', 'Descreva sua necessidade.');
+                        valid = false;
+                    } else if (descVal.length < 20) {
+                        showError(descricao, 'descricao-error', 'A descrição precisa de no mínimo 20 caracteres (atual: ' + descVal.length + ').');
+                        valid = false;
+                    } else if (descVal.length > 1000) {
+                        showError(descricao, 'descricao-error', 'A descrição permite no máximo 1000 caracteres.');
+                        valid = false;
+                    } else {
+                        showError(descricao, 'descricao-error', '');
+                    }
+
+                    feedback.classList.add('hidden');
+                    if (!valid) {
+                        e.preventDefault();
+                        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+                        if (firstInvalid) firstInvalid.focus();
+                        feedback.textContent = 'Verifique os campos destacados antes de enviar.';
+                        feedback.classList.remove('hidden');
+                        feedback.classList.add('text-rose-400');
+                        feedback.classList.remove('text-emerald-400');
+                        return;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
