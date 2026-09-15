@@ -19,6 +19,17 @@
     <meta property="og:description"
         content="Soluções robustas em arquitetura de sistemas e páginas web focadas em alta performance e conversão.">
     <meta property="og:url" content="https://sdiascode.com.br">
+    <meta property="og:image" content="https://sdiascode.com.br/img/app.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Silvio Dias | Engenharia de Software & Landing Pages">
+    <meta name="twitter:description"
+        content="Soluções robustas em arquitetura de sistemas e páginas web focadas em alta performance e conversão.">
+    <meta name="twitter:image" content="https://sdiascode.com.br/img/app.jpg">
+
+    <link rel="canonical" href="https://sdiascode.com.br/">
+    <meta name="theme-color" content="#070a12">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +42,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -44,11 +54,6 @@
                             800: '#111d42',
                             700: '#1c2d5a',
                             600: '#253e78',
-                        },
-                        accent: {
-                            cyan: '#38bdf8',
-                            blue: '#3b82f6',
-                            glow: '#60a5fa',
                         }
                     }
                 }
@@ -56,12 +61,14 @@
         }
     </script>
 
+    <!-- JavaScript próprio (menu mobile + formulário + LGPD) -->
+    <script src="main.js" defer></script>
 
 </head>
 
 <body class="antialiased text-slate-300 selection:bg-sky-500 selection:text-white relative">
 
-    <div class="bg-glow-blob"></div>
+    <div class="bg-glow-blob" aria-hidden="true"></div>
 
     <!-- Header / Navbar -->
     <header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-800/60 bg-navy-950/80 backdrop-blur-md">
@@ -92,9 +99,9 @@
 
             <!-- CTA Button Header -->
             <div class="hidden sm:flex items-center gap-4">
-                <a href="https://wa.me/5567999999999?text=Olá%20Silvio,%20gostaria%20de%20solicitar%20um%20orçamento!"
+                <a href="https://wa.me/5567993298231?text=Olá%20Silvio,%20gostaria%20de%20solicitar%20um%20orçamento!"
                     target="_blank" rel="noopener"
-                    class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-semibold text-sm shadow-md shadow-sky-500/20 hover:shadow-sky-500/30 transition-all flex items-center gap-2">
+                    class="btn-secondary px-5 py-2.5 text-white font-semibold text-sm flex items-center gap-2">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                         <path
                             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -104,7 +111,7 @@
             </div>
 
             <!-- Mobile Hamburger Button -->
-            <button id="mobile-menu-btn" aria-label="Abrir Menu"
+            <button id="mobile-menu-btn" aria-label="Abrir Menu" aria-expanded="false" aria-controls="mobile-menu"
                 class="md:hidden text-slate-300 hover:text-white p-2 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
@@ -136,11 +143,7 @@
             <!-- Availability Badge -->
             <div
                 class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs sm:text-sm font-semibold tracking-wider mb-8">
-                <span class="relative flex h-2.5 w-2.5 shrink-0">
-                    <span
-                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
-                </span>
+                <span class="pulse-dot" aria-hidden="true"></span>
                 <span>Engenharia de Software • .NET • React • Minimal APIs</span>
             </div>
 
@@ -150,18 +153,18 @@
 
                 <!-- Grade tecnológica de fundo -->
                 <div
-                    class="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.08)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_40%,black,transparent)] pointer-events-none">
+                    class="absolute inset-0 bg-[linear-gradient(to_right,rgba(56,189,248,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(56,189,248,0.08)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_40%,black,transparent)] pointer-events-none" aria-hidden="true">
                 </div>
 
                 <!-- Brilhos decorativos -->
                 <div
-                    class="absolute -top-28 left-1/2 -translate-x-1/2 w-3/4 h-56 bg-sky-500/20 rounded-full blur-3xl pointer-events-none">
+                    class="absolute -top-28 left-1/2 -translate-x-1/2 w-3/4 h-56 bg-sky-500/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true">
                 </div>
                 <div
-                    class="absolute -bottom-32 -left-20 w-72 h-72 bg-blue-600/15 rounded-full blur-3xl pointer-events-none">
+                    class="absolute -bottom-32 -left-20 w-72 h-72 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" aria-hidden="true">
                 </div>
                 <div
-                    class="absolute -bottom-32 -right-20 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none">
+                    class="absolute -bottom-32 -right-20 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true">
                 </div>
 
                 <!-- Conteúdo do banner -->
@@ -186,7 +189,7 @@
             <!-- Hero Action Buttons -->
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                 <a href="#contato"
-                    class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-base shadow-lg shadow-sky-500/25 transition-all hover:scale-[1.02]">
+                    class="btn-secondary w-full sm:w-auto px-8 py-4 text-white font-bold text-base hover:scale-[1.02]">
                     Solicitar Orçamento
                 </a>
                 <a href="#produtos"
@@ -224,7 +227,7 @@
 
                 <!-- Detalhe sutil de iluminação de fundo (Glow Effect) -->
                 <div
-                    class="absolute -top-24 -right-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+                    class="absolute -top-24 -right-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true">
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -233,11 +236,7 @@
                     <div class="lg:col-span-7 space-y-6">
                         <div
                             class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider">
-                            <span class="relative flex h-2.5 w-2.5">
-                                <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
-                            </span>
+                            <span class="pulse-dot" aria-hidden="true"></span>
                             Trajetória & Filosofia
                         </div>
 
@@ -346,11 +345,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div
                     class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider">
-                    <span class="relative flex h-2.5 w-2.5">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
-                    </span>
+                    <span class="pulse-dot" aria-hidden="true"></span>
                     Especialidades & Soluções
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-2">
@@ -435,17 +430,13 @@
         </section>
 
 
-        <!-- Seção: ESTUDOS DE CASO (Case Studies) - Atualizado via ajustesfinais.md -->
+        <!-- Seção: ESTUDOS DE CASO (Case Studies) -->
         <section id="casos-sucesso" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
             <!-- Header da Seção -->
             <div class="text-center max-w-3xl mx-auto mb-10 lg:mb-12">
                 <div
                     class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider">
-                    <span class="relative flex h-2.5 w-2.5">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
-                    </span>
+                    <span class="pulse-dot" aria-hidden="true"></span>
                     Estudos de Caso • Métricas Reais em Produção
                 </div>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mt-4">
@@ -603,7 +594,7 @@
                         <!-- CTA -->
                         <div class="pt-2 mt-auto">
                             <a href="https://concurso.sdiascode.com.br/" target="_blank" rel="noopener"
-                                class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-sky-500/20 hover:shadow-sky-500/30 transition-all">
+                                class="btn-secondary w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-white font-bold text-sm">
                                 <span>Testar App de Concursos Grátis</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -737,7 +728,7 @@
                         <!-- CTA -->
                         <div class="pt-2 mt-auto">
                             <a href="https://kayzencursos.com.br/" target="_blank" rel="noopener"
-                                class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-sky-500/20 hover:shadow-sky-500/30 transition-all">
+                                class="btn-secondary w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-white font-bold text-sm">
                                 <span>Visitar site Kayzen</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -759,7 +750,7 @@
 
                 <!-- Detalhe sutil de iluminação de fundo (Glow Effect) -->
                 <div
-                    class="absolute -top-24 -left-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+                    class="absolute -top-24 -left-24 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true">
                 </div>
 
                 <!-- Cabeçalho: Badge + Título (largura total; o card da direita começa abaixo do H2) -->
@@ -768,11 +759,7 @@
                     <!-- Badge Status com Animação de Pulso -->
                     <div
                         class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider">
-                        <span class="relative flex h-2.5 w-2.5">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
-                        </span>
+                        <span class="pulse-dot" aria-hidden="true"></span>
                         Produto Próprio em Produção
                     </div>
 
@@ -790,7 +777,7 @@
                     </div>
                 </div>
 
-                <!-- Coluna Esquerda: Descrição + Recursos (grid absorve a altura e alinha a base ao card) -->
+                <!-- Coluna Esquerda: Descrição + Recursos -->
                 <div class="lg:col-span-7 relative z-10 min-w-0 flex flex-col gap-6">
 
                     <!-- Descrição -->
@@ -840,7 +827,7 @@
                         class="flex-1 flex flex-col items-center justify-center text-center p-8 bg-gradient-to-b from-slate-800/80 to-slate-900/90 rounded-2xl border border-sky-500/30 shadow-xl relative overflow-hidden group">
 
                         <!-- Ícone do App em Imagem JPEG -->
-                        <img src="img/app.jpg" alt="Ícone App PRF ADM"
+                        <img src="img/app.jpg" alt="Ícone App PRF ADM" width="283" height="371" loading="lazy" decoding="async"
                             class="w-20 h-20 rounded-2xl object-contain p-1 bg-slate-900/90 border border-sky-500/20 mb-5 shadow-lg shadow-sky-500/30 group-hover:scale-105 transition-transform duration-300">
 
                         <h3 class="text-xl font-bold text-white mb-1">App PRF ADM</h3>
@@ -850,7 +837,7 @@
 
                         <!-- Botão Principal alinhado com o gradiente do título (Quiz & Simulados) -->
                         <a href="https://concurso.sdiascode.com.br" target="_blank" rel="noopener"
-                            class="w-full px-6 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2">
+                            class="btn-primary w-full px-6 py-4 text-slate-950 font-extrabold text-sm flex items-center justify-center gap-2">
                             <span>Acessar Landing Page do App</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
@@ -872,11 +859,7 @@
 
                 <div
                     class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/20 text-sky-300 text-xs font-semibold uppercase tracking-wider mb-3">
-                    <span class="relative flex h-2.5 w-2.5">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
-                    </span>
+                    <span class="pulse-dot" aria-hidden="true"></span>
                     Vamos Conversar
                 </div>
 
@@ -892,7 +875,7 @@
                 <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="https://wa.me/5567993298231?text=Olá%20Silvio,%20gostaria%20de%20conversar%20sobre%20um%20projeto!"
                         target="_blank" rel="noopener"
-                        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-3">
+                        class="btn-primary w-full sm:w-auto px-8 py-4 text-slate-950 font-extrabold text-base flex items-center justify-center gap-3">
                         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                             <path
                                 d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -923,6 +906,8 @@
                             <input type="hidden" name="_subject" value="Novo contato via site sdiascode.com.br">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="[Segurança e LGPD] Consentimento" id="lgpd-consent-value" value="">
+                            <input type="hidden" name="[Segurança e LGPD] Data/Hora" id="lgpd-datetime" value="">
                             <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off"
                                 aria-hidden="true">
 
@@ -931,7 +916,7 @@
                                 <input id="nome" name="nome" type="text" required autocomplete="name" minlength="2"
                                     maxlength="100" placeholder="Seu nome completo" aria-required="true"
                                     aria-describedby="nome-error"
-                                    class="w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-100 placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition">
+                                    class="form-input">
                                 <p id="nome-error" class="hidden mt-1.5 text-xs text-rose-400" role="alert"></p>
                             </div>
 
@@ -941,7 +926,7 @@
                                 <input id="email" name="email" type="email" required autocomplete="email"
                                     inputmode="email" maxlength="254" placeholder="seu@email.com" aria-required="true"
                                     aria-describedby="email-error"
-                                    class="w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-100 placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition">
+                                    class="form-input">
                                 <p id="email-error" class="hidden mt-1.5 text-xs text-rose-400" role="alert"></p>
                             </div>
 
@@ -953,7 +938,7 @@
                                     placeholder="Digite nesta area qual a sua necessidade e como podemos atende-lo."
                                     aria-required="true"
                                     aria-describedby="descricao-help descricao-count descricao-error"
-                                    class="w-full px-4 py-3 rounded-xl bg-slate-800/60 border border-slate-700/60 text-slate-100 placeholder:text-slate-500 text-sm focus:outline-none focus:border-sky-400 focus:ring-2 focus:ring-sky-500/30 transition resize-y min-h-[128px]"></textarea>
+                                    class="form-input resize-y min-h-[128px]"></textarea>
                                 <div class="mt-1.5 flex items-center justify-between gap-4">
                                     <p id="descricao-help" class="text-xs text-slate-500">Mínimo 20 e máximo 1000
                                         caracteres.</p>
@@ -964,8 +949,23 @@
                             </div>
 
                             <div class="sm:col-span-2">
-                                <button type="submit" id="submit-btn"
-                                    class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-sky-400 via-cyan-400 to-blue-500 hover:from-sky-300 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-extrabold text-base shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed">
+                                <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/50 border border-slate-700/50">
+                                    <input id="lgpd-consent" name="consentimento_lgpd" type="checkbox" required
+                                        value="aceito" aria-required="true" aria-describedby="lgpd-error"
+                                        class="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded accent-sky-500">
+                                    <label for="lgpd-consent" class="text-xs sm:text-sm text-slate-300 leading-relaxed cursor-pointer">
+                                        Li e concordo com a
+                                        <a href="privacidade.html" target="_blank" rel="noopener"
+                                            class="text-sky-400 hover:text-sky-300 font-semibold underline underline-offset-2">Política
+                                            de Privacidade</a>.
+                                    </label>
+                                </div>
+                                <p id="lgpd-error" class="hidden mt-1.5 text-xs text-rose-400" role="alert"></p>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <button type="submit" id="submit-btn" disabled
+                                    class="btn-primary w-full px-8 py-4 text-slate-950 font-extrabold text-base flex items-center justify-center gap-2">
                                     <span id="btn-text">Enviar mensagem</span>
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         aria-hidden="true">
@@ -1009,6 +1009,7 @@
                     class="hover:text-sky-400 transition-colors">Instagram</a>
                 <a href="https://concurso.sdiascode.com.br/" target="_blank" rel="noopener"
                     class="hover:text-sky-400 transition-colors">App PRF ADM</a>
+                <a href="privacidade.html" class="hover:text-sky-400 transition-colors">Privacidade</a>
             </div>
 
             <p class="text-xs text-slate-400 text-center md:text-right">
@@ -1018,166 +1019,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Interactions + Contact Form Validation -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('hidden');
-                });
-
-                // Fechar menu mobile ao clicar em um link
-                const mobileLinks = mobileMenu.querySelectorAll('a');
-                mobileLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden');
-                    });
-                });
-            }
-
-            // Validação + Envio AJAX do formulário de contato (Fetch API)
-            const form = document.getElementById('contact-form');
-            if (form) {
-                const nome = document.getElementById('nome');
-                const email = document.getElementById('email');
-                const descricao = document.getElementById('descricao');
-                const count = document.getElementById('descricao-count');
-                const feedback = document.getElementById('form-feedback');
-                const submitBtn = document.getElementById('submit-btn');
-                const btnText = document.getElementById('btn-text');
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-                const showError = (input, errorId, message) => {
-                    const el = document.getElementById(errorId);
-                    if (message) {
-                        el.textContent = message;
-                        el.classList.remove('hidden');
-                        input.classList.add('border-rose-500');
-                        input.classList.remove('border-slate-700/60');
-                        input.setAttribute('aria-invalid', 'true');
-                    } else {
-                        el.textContent = '';
-                        el.classList.add('hidden');
-                        input.classList.remove('border-rose-500');
-                        input.classList.add('border-slate-700/60');
-                        input.removeAttribute('aria-invalid');
-                    }
-                };
-
-                const updateCount = () => {
-                    count.textContent = descricao.value.length + ' / 1000';
-                };
-                descricao.addEventListener('input', () => {
-                    updateCount();
-                    if (descricao.value.trim().length >= 20) showError(descricao, 'descricao-error', '');
-                });
-                updateCount();
-
-                nome.addEventListener('input', () => {
-                    if (nome.value.trim().length >= 2) showError(nome, 'nome-error', '');
-                });
-                email.addEventListener('input', () => {
-                    if (emailPattern.test(email.value.trim())) showError(email, 'email-error', '');
-                });
-
-                const showFeedback = (message, type) => {
-                    feedback.textContent = message;
-                    if (type === 'success') {
-                        feedback.className = 'mt-4 text-center text-sm font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 p-3 rounded-xl';
-                    } else {
-                        feedback.className = 'mt-4 text-center text-sm font-medium text-rose-400 bg-rose-500/10 border border-rose-500/30 p-3 rounded-xl';
-                    }
-                };
-
-                form.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    let valid = true;
-                    const nomeVal = nome.value.trim();
-                    const emailVal = email.value.trim();
-                    const descVal = descricao.value.trim();
-
-                    if (nomeVal.length < 2) {
-                        showError(nome, 'nome-error', 'Informe seu nome (mínimo 2 caracteres).');
-                        valid = false;
-                    } else {
-                        showError(nome, 'nome-error', '');
-                    }
-
-                    if (!emailVal) {
-                        showError(email, 'email-error', 'Informe seu e-mail.');
-                        valid = false;
-                    } else if (!emailPattern.test(emailVal)) {
-                        showError(email, 'email-error', 'Informe um e-mail válido (ex.: seu@email.com).');
-                        valid = false;
-                    } else {
-                        showError(email, 'email-error', '');
-                    }
-
-                    if (!descVal) {
-                        showError(descricao, 'descricao-error', 'Descreva sua necessidade.');
-                        valid = false;
-                    } else if (descVal.length < 20) {
-                        showError(descricao, 'descricao-error', 'A descrição precisa de no mínimo 20 caracteres (atual: ' + descVal.length + ').');
-                        valid = false;
-                    } else if (descVal.length > 1000) {
-                        showError(descricao, 'descricao-error', 'A descrição permite no máximo 1000 caracteres.');
-                        valid = false;
-                    } else {
-                        showError(descricao, 'descricao-error', '');
-                    }
-
-                    feedback.classList.add('hidden');
-                    if (!valid) {
-                        const firstInvalid = form.querySelector('[aria-invalid="true"]');
-                        if (firstInvalid) firstInvalid.focus();
-                        showFeedback('Verifique os campos destacados antes de enviar.', 'error');
-                        return;
-                    }
-
-                    // Estado de envio
-                    const originalBtnText = btnText ? btnText.textContent : '';
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        if (btnText) btnText.textContent = 'Enviando...';
-                    }
-
-                    try {
-                        const formData = new FormData(form);
-                        const response = await fetch(form.action, {
-                            method: 'POST',
-                            body: formData,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-
-                        if (response.ok) {
-                            form.reset();
-                            updateCount();
-                            showFeedback('✓ Mensagem enviada com sucesso! Responderei em breve.', 'success');
-                        } else {
-                            let errorMsg = 'Ocorreu um erro ao enviar a mensagem. Tente novamente.';
-                            try {
-                                const data = await response.json();
-                                if (data && data.message) errorMsg = data.message;
-                            } catch (_) { /* ignora parse */ }
-                            showFeedback(errorMsg, 'error');
-                        }
-                    } catch (err) {
-                        showFeedback('Erro de conexão. Verifique sua internet e tente novamente.', 'error');
-                    } finally {
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            if (btnText) btnText.textContent = originalBtnText || 'Enviar mensagem';
-                        }
-                    }
-                });
-            }
-        });
-    </script>
+    <!-- JavaScript extraído para main.js (carregado com defer no <head>) -->
 </body>
 
 </html>
