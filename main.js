@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const lgpdConsent = document.getElementById('lgpd-consent');
         const lgpdError = document.getElementById('lgpd-error');
         const lgpdConsentValue = document.getElementById('lgpd-consent-value');
-        const lgpdDatetime = document.getElementById('lgpd-datetime');
+        const dataEnvioLocal = document.getElementById('data_envio_local');
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
         const showError = (input, errorId, message) => {
@@ -168,13 +168,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                // Evidência de consentimento LGPD no corpo do e-mail (log com data/hora)
+                // Evidência de consentimento LGPD no corpo do e-mail (log com data/hora local de Campo Grande/MS)
                 const consentDate = new Date();
                 if (lgpdConsentValue) {
                     lgpdConsentValue.value = 'O usuário marcou o checkbox e aceitou os termos da Política de Privacidade.';
                 }
-                if (lgpdDatetime) {
-                    lgpdDatetime.value = consentDate.toLocaleString('pt-BR', { timeZone: 'America/Campo_Grande' });
+                if (dataEnvioLocal) {
+                    dataEnvioLocal.value = consentDate.toLocaleString('pt-BR', {
+                        timeZone: 'America/Campo_Grande',
+                        dateStyle: 'short',
+                        timeStyle: 'medium'
+                    });
                 }
                 const formData = new FormData(form);
                 const response = await fetch(form.action, {

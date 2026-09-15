@@ -46,9 +46,9 @@ html/
 
 - Página dedicada: **`privacidade.html`** — layout no mesmo padrão visual do site (Tailwind + `style.css`), com identificação (Silvio Dias Ferreira, pessoa física, controlador/operador), dados coletados (Nome, E-mail, Descrição), finalidade (orçamentos e contatos profissionais), direitos do usuário (confirmação/correção/exclusão via `assistenciapc.ms@gmail.com`, assunto `Exclusão de dados — LGPD`) e segurança (confidencial, sem compartilhamento com terceiros), conforme a Lei nº 13.709/2018.
 - **Consentimento no formulário (`index.html`):** checkbox obrigatório `Li e concordo com a [Política de Privacidade]` acima do botão; o botão `Enviar mensagem` nasce `disabled` e só habilita após a marcação (`syncSubmitState()` em `main.js`); sem o aceite, o envio é bloqueado com mensagem de erro.
-- **Evidência no e-mail (log):** a cada envio, o JS preenche dois campos hidden que seguem no corpo do e-mail (template `table` do FormSubmit):
+- **Evidência no e-mail (log):** a cada envio, o JS preenche dois campos hidden que seguem no corpo do e-mail (template `table` do FormSubmit) — isso contorna o rodapé `Submitted at...` do FormSubmit, que usa UTC e não é configurável:
   - `[Segurança e LGPD] Consentimento` — `O usuário marcou o checkbox e aceitou os termos da Política de Privacidade.`
-  - `[Segurança e LGPD] Data/Hora` — data/hora do envio em `pt-BR` (`America/Campo_Grande`), servindo como histórico/log de cada consentimento.
+  - `data_envio_local` — data/hora do navegador do usuário convertida para `America/Campo_Grande` (`pt-BR`, `dateStyle: short`, `timeStyle: medium`, ex.: `15/09/2026, 11:30:00`), servindo como histórico/log de cada consentimento. O valor é injetado no handler de `submit` **antes** de montar o `FormData`, garantindo que siga no payload.
 
 ## JavaScript (`main.js`)
 
