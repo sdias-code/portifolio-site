@@ -69,9 +69,6 @@ html/
 - `@media (prefers-reduced-motion: reduce)` — desativa animações/transições para quem prefere
 - Âncoras com `scroll-mt-28` para compensar o header fixo `h-20`
 
-## SEO
-
-- `title`, `description`, `keywords`, `robots`, Open Graph (`og:image`, `og:locale`), Twitter Card, `canonical`, `theme-color`, `favicon.svg`, `lang="pt-BR"`, headings hierárquicos, `alt` + `width/height` + `loading="lazy"` nas imagens, labels associadas no form, `aria-hidden` em decorativos e `aria-expanded` no menu mobile.
 
 ## Rodar localmente
 
